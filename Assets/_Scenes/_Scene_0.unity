@@ -596,6 +596,60 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1552685827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552685829}
+  - component: {fileID: 1552685828}
+  m_Layer: 0
+  m_Name: CloudCover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552685828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552685827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2251460ec06264bb78292d6a60175d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudSprites:
+  - {fileID: 21300000, guid: 836deea52461f435ea72f5dcb31f1291, type: 3}
+  - {fileID: 21300000, guid: d5a2e889065f049d9ac9be3e93fd13a3, type: 3}
+  - {fileID: 21300000, guid: 6311b30bd3ef5453e9a60de06899db4c, type: 3}
+  - {fileID: 21300000, guid: 96e56f4fcfe4d417f8ff4d59b24b162a, type: 3}
+  - {fileID: 21300000, guid: acc5f0fd7462e4c4894ab0ad7ede1b6f, type: 3}
+  numClouds: 40
+  minPos: {x: -20, y: 5, z: -5}
+  maxPos: {x: 300, y: 40, z: 5}
+  scaleRange: {x: 1, y: 4}
+--- !u!4 &1552685829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552685827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1612533135
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,3 +941,4 @@ SceneRoots:
   - {fileID: 1518119215}
   - {fileID: 1319153676}
   - {fileID: 1409256657}
+  - {fileID: 1552685829}
