@@ -42,8 +42,8 @@ In addition to the tutorial, I added several features:
 
 5. **Load the start menu screen**
    - Once in Unity, go to the projects tab
-   - Navigate to `Assets > Scenes > StartMenu`
-   - Open the `StartMenu` scene
+   - Navigate to `Assets > Scenes > _Scene_0`
+   - Open the `_Scene_0` scene
 
  6. Start the game
     - Click the play button in the Unity toolbar at the top
