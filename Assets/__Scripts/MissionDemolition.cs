@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -15,6 +16,8 @@ public class MissionDemolition : MonoBehaviour
 {
     static private MissionDemolition S; // a private singleton
 
+    [SerializeField] private GameObject gameOverPanel;
+
     [Header("Inscribed")]
     public TextMeshProUGUI uitLevel; // UIText_Level text
     public TextMeshProUGUI uitShots; // UIText_Shots text
@@ -29,10 +32,30 @@ public class MissionDemolition : MonoBehaviour
     public GameMode mode = GameMode.idle;
     public string showing = "Show Slingshot"; // followCam mode
 
+    public void GameOver()
+    {
+        Debug.Log("Game Over!");
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+
     void Start()
     {
-        S = this; // define the singleton 
+        if (gameOverPanel == null)
+        {
+            gameOverPanel = GameObject.Find("GameOverPanel");
+        }
+        gameOverPanel.SetActive(false);
 
+        S = this; // define the singleton 
         level = 0;
         shotsTaken = 0;
         levelMax = castles.Length;
@@ -94,10 +117,12 @@ public class MissionDemolition : MonoBehaviour
         level++;
         if(level == levelMax)
         {
-            level = 0;
-            shotsTaken = 0;
+            GameOver();
         }
-        StartLevel();
+        else
+        {
+            StartLevel();
+        }
     }
 
     // static method that allows code anywhere to increment shotsTaken
